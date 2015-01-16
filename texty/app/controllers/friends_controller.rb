@@ -2,6 +2,7 @@ class FriendsController < ApplicationController
   before_action :set_friend, only: [:show, :edit, :update, :destroy]
 
   def text
+    # set ENV variables in application.yml
     @friend = set_friend
     @message = params[:message] 
 
@@ -9,7 +10,7 @@ class FriendsController < ApplicationController
     auth_token = ENV['AUTH_TOKEN']  # Your Twilio Auth Token
     client = Twilio::REST::Client.new account_sid, auth_token
      
-    from = ENV['TW_NUMBER']  # Your Twilio number
+    from = ENV['TW_NUMBER']  # Your Twilio number 
      
     client.account.messages.create(
         :from => from,
