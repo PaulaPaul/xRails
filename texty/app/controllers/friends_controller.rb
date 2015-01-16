@@ -3,13 +3,13 @@ class FriendsController < ApplicationController
 
   def text
     @friend = set_friend
-    @message = params[:message]
+    @message = params[:message] 
 
-    account_sid = ENV['AC_SID'] 
-    auth_token = ENV['AUTH_TOKEN'] 
+    account_sid = ENV['AC_SID']     # Your Twilio Account SID
+    auth_token = ENV['AUTH_TOKEN']  # Your Twilio Auth Token
     client = Twilio::REST::Client.new account_sid, auth_token
      
-    from = "+19802673141" # My Twilio number
+    from = ENV['TW_NUMBER']  # Your Twilio number
      
     client.account.messages.create(
         :from => from,

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Texty</title>
+  <title>Texty</title> 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,6 +11,7 @@
 
 	<p>Twilio AC_SID: <%= ENV['AC_SID'] %> </p>
 	<p>Twilio AUTH_TOKEN: <%= ENV['AUTH_TOKEN'] %></p>
+	<p>Twilio Number: <%= ENV['TW_NUMBER'] %></p>
 
 <%= yield %>
 

@@ -17,4 +17,7 @@
 /tmp
 
 # Ignore the appliation.yml file
-texty/config/application.yml 
+/texty/config/application.yml
+
+# Ignore the appliation.yml file
+texty/config/application.yml  

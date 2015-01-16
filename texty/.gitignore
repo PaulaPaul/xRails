@@ -17,4 +17,4 @@
 /tmp
 
 # Ignore the appliation.yml file
-config/application.yml 
+/config/application.yml 
