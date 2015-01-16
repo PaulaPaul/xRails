@@ -1,0 +1,14 @@
+defaults: &defaults
+  AC_SID: ACcbab70a6f086e119dc07e8a0c68120cf
+  AUTH_TOKEN: 54a3e7ca9ac49fc705ae278c4146ea16
+# AC_SID is the twilio account SID and AUTH_TOKEN is the twilio auth token
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+ 

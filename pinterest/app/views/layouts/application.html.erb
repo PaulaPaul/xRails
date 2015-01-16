@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+  <div class="icon-bar four-up">
+    <a class="item" href="/">
+      <%= image_tag 'pinterest.svg' %>
+      <label>Pinterest</label>
+    </a>
+    <a class="item" href="/users">
+      <%= image_tag 'users.svg' %>
+      <label>Users</label>
+    </a>
+    <a class="item" href="/boards">
+      <%= image_tag 'file.svg' %>
+      <label>Boards</label>
+    </a>
+    <a class="item" href="/pins">
+      <%= image_tag 'pushpin.svg' %>
+      <label>Pins</label>
+    </a>
+  </div>
+
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>

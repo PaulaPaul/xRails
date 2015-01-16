@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @owner.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @owner.last_name %>
+</p>
+
+<p><strong>Owner's Pets:</strong></p>
+<ul>
+<% @owner.pets each do |pet| %>
+<li><%= pet.name %>: <%= pet.animal_type %>, <%= pet.breed %>  </li>
+<% end %>
+</ul>
+
+<!-- <p><strong>Owner's Petclub Memberships:</strong></p>
+<ul>
+<% @owner.pets each do |pet| %>
+<li><%= pet.name %>: <%= pet.animal_type %>, <%= pet.breed %>  </li>
+<% end %>
+</ul> -->
+
+<%= link_to 'Edit', edit_owner_path(@owner) %> |
+<%= link_to 'Back', owners_path %>

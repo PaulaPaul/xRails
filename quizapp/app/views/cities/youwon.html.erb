@@ -1,0 +1,11 @@
+<!-- user will reach this page if they name all the cities correctly -->
+<h1>You did it!</h1>
+<h3>You guessed all the cities where TTS has a campus!  Here they are:</h3>
+<div>
+<ul>
+<% @cities.each do |city| %>
+<li><%="#{city.id}. #{city.name}"%></li>
+<%end%>
+</ul>
+<%= link_to 'Play Again?', playagain_path %>
+</div>

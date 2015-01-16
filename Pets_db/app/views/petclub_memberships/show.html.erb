@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primary contact:</strong>
+  <%= @petclub_membership.primary_contact %>
+</p>
+
+<p>
+  <strong>Pet name:</strong>
+  <%= @petclub_membership.pet_name %>
+</p>
+
+<p>
+  <strong>Petclub:</strong>
+  <%= @petclub_membership.petclub_id %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @petclub_membership.owner_id %>
+</p>
+
+<%= link_to 'Edit', edit_petclub_membership_path(@petclub_membership) %> |
+<%= link_to 'Back', petclub_memberships_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  primary_contact: MyString
+  pet_name: MyString
+  petclub_id: 1
+  owner_id: 1
+
+two:
+  primary_contact: MyString
+  pet_name: MyString
+  petclub_id: 1
+  owner_id: 1

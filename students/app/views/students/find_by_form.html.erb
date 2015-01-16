@@ -1,0 +1,5 @@
+<%= form_tag("/students/display_by_form", method: "post") do %>
+	<%= label_tag(:input, "Student Id") %>
+	<%= text_field_tag(:input) %>
+	<%= submit_tag("Find!") %> 
+<% end %>

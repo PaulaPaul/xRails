@@ -1,0 +1,31 @@
+<h1>Listing petclub_memberships</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primary contact</th>
+      <th>Pet name</th>
+      <th>Petclub</th>
+      <th>Owner</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @petclub_memberships.each do |petclub_membership| %>
+      <tr>
+        <td><%= petclub_membership.primary_contact %></td>
+        <td><%= petclub_membership.pet_name %></td>
+        <td><%= petclub_membership.petclub_id %></td>
+        <td><%= petclub_membership.owner_id %></td>
+        <td><%= link_to 'Show', petclub_membership %></td>
+        <td><%= link_to 'Edit', edit_petclub_membership_path(petclub_membership) %></td>
+        <td><%= link_to 'Destroy', petclub_membership, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Petclub membership', new_petclub_membership_path %>

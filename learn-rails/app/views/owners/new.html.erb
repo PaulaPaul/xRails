@@ -1,0 +1,21 @@
+
+<h3 style="color: #0000FF;">About the Owner...</h3>
+
+<p>Welcome to the home of <%= @owner.name %>, who was born in the year <%= @owner.birthdate.strftime("%Y")%>, 
+	on day <%= @owner.birthdate.strftime("%d")%> of the <%= @owner.birthdate.strftime("%m")%>th month of the year.</p>
+
+<p>This year your birthday is on: <%= @owner.birthday %></p>
+
+<% if @owner.age > 40 %>
+	<p>We don't have numbers that large, so can only print your age in hex.  Congratulations on making it all the way to 0x<%= @owner.age_in_hex %> years young!</p>
+<% else %>
+	<p>Congratulations on making it all the way to <%= @owner.age %> years young!</p>
+<% end %>
+
+<% if @owner.countdown > 0 %>
+   <p>Only <%= @owner.countdown %> days until <%= @owner.name %>'s birthday!</p>
+<% else %>
+	<marquee><p>Happy birthday <%= @owner.name %>!!!!  You don't look a day over <%= @owner.age %>. </p></marquee>
+<% end %>
+
+

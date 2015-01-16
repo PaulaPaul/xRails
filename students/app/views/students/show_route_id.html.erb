@@ -1,0 +1,11 @@
+<% if @exists %>
+	<h3>The Student is:</h3>
+	<p>Name</p>
+	<%= @student.name %>
+	<p>Email</p>
+	<%= @student.email %>
+	<p>Id</p>
+	<%= @student.id %>
+<% else %>
+	<p>Sorry! Wrong number!</p>
+<% end %>

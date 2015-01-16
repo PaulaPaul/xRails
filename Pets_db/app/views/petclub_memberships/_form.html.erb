@@ -1,0 +1,33 @@
+<%= form_for(@petclub_membership) do |f| %>
+  <% if @petclub_membership.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@petclub_membership.errors.count, "error") %> prohibited this petclub_membership from being saved:</h2>
+
+      <ul>
+      <% @petclub_membership.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :primary_contact %><br>
+    <%= f.text_field :primary_contact %>
+  </div>
+  <div class="field">
+    <%= f.label :pet_name %><br>
+    <%= f.text_field :pet_name %>
+  </div>
+  <div class="field">
+    <%= f.label :petclub_id %><br>
+    <%= f.number_field :petclub_id %>
+  </div>
+  <div class="field">
+    <%= f.label :owner_id %><br>
+    <%= f.number_field :owner_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

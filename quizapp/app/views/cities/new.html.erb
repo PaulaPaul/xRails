@@ -1,0 +1,20 @@
+<h1>Quiz Time!</h1>
+<h2>Name the Cities where TTS has a campus:</h2>
+
+<div>
+<%= @message %>
+</div>
+<br>
+
+<%= render 'form' %>
+
+<div>
+<ul>
+<% @cities.each do |city| %>
+<li><%="#{city.id}: #{city.name}"%></li>
+<%end%>
+</ul>
+</div>
+<br />
+<%= link_to 'Clear out previous guesses and start over?', playagain_path %>
+

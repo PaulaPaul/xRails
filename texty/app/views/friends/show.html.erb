@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Friend Id:</strong>
+  <%= @friend.id %>
+</p>
+
+<p>
+  <strong>Friend Name:</strong>
+  <%= @friend.name %>
+</p>
+
+<p>
+  <strong>Friend Phone (US only, in xxxxxxxxxx format):</strong>
+  <%= @friend.phone %>
+</p>
+
+<h1>Text this friend!</h1>
+
+<div>
+<%= form_tag("/friends/" + @friend.id.to_s + "/text", method: "get") %>
+  <%= label_tag(:message, "message") %>
+  <%= text_field_tag(:message) %>
+  <%= submit_tag("Text!") %>
+</div>
+
+
+<%= link_to 'Edit', edit_friend_path(@friend) %> |
+<%= link_to 'Back', friends_path %>

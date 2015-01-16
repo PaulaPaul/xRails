@@ -1,0 +1,28 @@
+<h1>Welcome!</h1>
+<!--
+
+All the CSS classes are optional, and can be found in the application.css file,
+
+which you can copy from GitHub.
+
+-->
+
+<div class="scroll choose-a-station">
+	<h2 class="orange-text">Choose a Station!</h2>
+	<p><b>Which MARTA Station Are You At?</b></p>
+</div>
+
+<div class="radios">
+	<!-- Below is the form for Radio Buttons -->
+	<%= form_tag("/welcome/yourbuses", method: "get") do %>
+		<%= label_tag(:station, " " ) %>
+		<br />
+
+		<% @stations.each do |s| %>
+			<!-- We loop through the array and each item (station) is set next to a radio button -->
+			<%= radio_button_tag(:station, s) %> <%= s %><br />
+		<% end %>
+
+		<%= submit_tag 'Check for buses!', :class=>'btn submit-button' %>
+	<% end %>
+</div>

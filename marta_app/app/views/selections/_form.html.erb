@@ -1,0 +1,20 @@
+<%= form_for(@selection) do |f| %>
+  <% if @selection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@selection.errors.count, "error") %> prohibited this selection from being saved:</h2>
+
+      <ul>
+      <% @selection.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.select :name, Station.all.collect{|station| [station.name]} %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Check for buses', :class=>'btn submit-button' %>
+  </div>
+<% end %>

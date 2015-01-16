@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @petclub.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @petclub.description %>
+</p>
+
+<%= link_to 'Edit', edit_petclub_path(@petclub) %> |
+<%= link_to 'Back', petclubs_path %>

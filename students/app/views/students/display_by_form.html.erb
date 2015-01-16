@@ -1,0 +1,8 @@
+<% if @exists %>
+	<p>The Student you requested is</p>
+	<%= @student.name %><br>
+	<%= @student.email %><br>
+<% else %>
+	<p>That student does not exist in our records.</p>
+<% end %>
+<p> <%= link_to "Try Again", '/students/find_by_form' %> </p>

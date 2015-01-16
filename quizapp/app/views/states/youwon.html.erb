@@ -1,0 +1,11 @@
+<!-- user will reach this page if they name all the states correctly -->
+<h1>You did it!</h1>
+<h3>You guessed all the states in the United States!  Here they are:</h3>
+<div>
+<ul>
+<% @states.each do |state| %>
+<li><%="#{state.id}. #{state.name}"%></li>
+<%end%>
+</ul>
+<%= link_to 'Play Again?', playagainstate_path %>
+</div>

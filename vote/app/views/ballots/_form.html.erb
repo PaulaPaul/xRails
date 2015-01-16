@@ -1,0 +1,29 @@
+<%= form_for(@ballot) do |f| %>
+  <% if @ballot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ballot.errors.count, "error") %> prohibited this ballot from being saved:</h2>
+
+      <ul>
+      <% @ballot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :vote %><br>
+    <%= f.text_field :vote %>
+  </div>
+  <div class="field">
+    <%= f.label :voter_id %><br>
+    <%= f.number_field :voter_id %>
+  </div>
+  <div class="field">
+    <%= f.label :ballot_measure_id %><br>
+    <%= f.number_field :ballot_measure_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

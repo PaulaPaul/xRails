@@ -1,0 +1,29 @@
+<h1>Listing ballot_measures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Title</th>
+      <th>Funding</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ballot_measures.each do |ballot_measure| %>
+      <tr>
+        <td><%= ballot_measure.number %></td>
+        <td><%= ballot_measure.title %></td>
+        <td><%= ballot_measure.funding %></td>
+        <td><%= link_to 'Show', ballot_measure %></td>
+        <td><%= link_to 'Edit', edit_ballot_measure_path(ballot_measure) %></td>
+        <td><%= link_to 'Destroy', ballot_measure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ballot measure', new_ballot_measure_path %>

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<%= @some_text %>
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>Showing all of <%= @user.first_name %>'s Boards:</p>
+<ul>
+	<% @boards.each do |board| %>
+	<li><%= link_to board.name, board_path(board) %></li>
+	<% end %>
+</ul>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

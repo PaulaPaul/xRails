@@ -1,0 +1,34 @@
+<center><h1>All The Pins</h1>
+<div class= "item-links">
+  <%= link_to 'New Pin', new_pin_path %>
+</div>
+</center>
+
+<div id="columns">
+    <% @pins.each do |pin| %>
+      <div class="item-background">
+        <div class="item-image">
+        <%= image_tag( pin.image, :width => 200) if pin.image.present? rescue "none" %>
+        </div>
+        <div class="item-info">
+          <h3><%= pin.name %></h3>
+          <h4>By: <%= link_to pin.user.first_name, user_path(pin.user.id) %></h4>
+          <h4>Pinned to board: 
+            <%= if pin.board present? 
+                  link_to pin.board.name, board_path(pin.board.id)  
+                end %></h4>
+        </div>
+        <div class= "item-links">
+          <%= link_to 'Show', pin %>
+          <%= link_to 'Edit', edit_pin_path(pin) %>
+          <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    <% end %>
+</div>
+<br>
+<center>
+<div class= "item-links">
+  <%= link_to 'New Pin', new_pin_path %>
+</div>
+</center>

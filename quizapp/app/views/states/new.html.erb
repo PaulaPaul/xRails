@@ -1,0 +1,19 @@
+<h1>Quiz Time!</h1>
+<h2>Name all the states in the United States of America!</h2>
+
+<div>
+<%= @message %>
+</div>
+<br>
+
+<%= render 'form' %>
+
+<div>
+<ul>
+<% @states.each do |state| %>
+<li><%="#{state.id}: #{state.name}"%></li>
+<%end%>
+</ul>
+</div>
+<br />
+<%= link_to 'Clear out previous guesses and start over?', playagainstate_path %>

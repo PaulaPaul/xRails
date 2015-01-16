@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<% pin = @pin %>
+<div id="columns">
+  <div class="show-item-background">
+    <div class="item-image">
+    <%= image_tag( pin.image, :width => 200) if pin.image.present? rescue "none" %>
+    </div>
+    <div class="item-info">
+      <h3><%= pin.name %></h3>
+      <h4>By: <%= pin.user.first_name %></h4>
+      <h4>Pinned to board: <%= pin.board.name %></h4>
+    </div>
+    <div class= "item-links">
+    <%= link_to 'Edit', edit_pin_path(@pin) %> |
+    <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %> |
+    <%= link_to 'Back', pins_path %> 
+    </div>
+  </div>
+</div>  

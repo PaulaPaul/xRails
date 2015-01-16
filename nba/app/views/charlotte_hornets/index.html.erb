@@ -1,0 +1,31 @@
+<h1>Listing charlotte_hornets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Position</th>
+      <th>College</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charlotte_hornets.each do |charlotte_hornet| %>
+      <tr>
+        <td><%= charlotte_hornet.name %></td>
+        <td><%= charlotte_hornet.number %></td>
+        <td><%= charlotte_hornet.position %></td>
+        <td><%= charlotte_hornet.college %></td>
+        <td><%= link_to 'Show', charlotte_hornet %></td>
+        <td><%= link_to 'Edit', edit_charlotte_hornet_path(charlotte_hornet) %></td>
+        <td><%= link_to 'Destroy', charlotte_hornet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Charlotte hornet', new_charlotte_hornet_path %>

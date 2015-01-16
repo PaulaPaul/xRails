@@ -1,0 +1,18 @@
+<h1>Your Buses!</h1>
+<h3>You are at: <%= @station %> Station.</h3>
+
+<div>
+	<%= @message %>
+	<!-- Here is the message we set up in the Application Helper -->
+</div>
+
+<br />
+<% @buses.each do |route, vehicle| %>
+	<!-- We loop through the hash, printing out keys and values.
+	If nothing is in the hash, nothing will print out. -->
+	<div>
+		Route: <%= route %><br />
+		Vehicle: <%= vehicle %><br />
+	</div>
+	<hr />
+<% end %>

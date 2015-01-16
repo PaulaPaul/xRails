@@ -1,0 +1,42 @@
+<center><h1>All The Boards</h1>
+<div class= "item-links">
+  <%= link_to 'New Board', new_board_path %>
+</div>
+</center>
+
+<div id="board-columns">
+<% @boards.each do |board| %>
+  <div class="show-item-background">
+    <div class="item-info">
+      <h3><%= board.name %></h3>
+      <h4>About: <%= board.about %></h4>
+      <h4>By: <%= board.user.first_name %></h4>
+      <h4>Created: <%= board.created_at.strftime("%d %b. %Y") %></h4>
+    </div>
+
+  <div id="columns">
+      <% board.pins.each do |pin| %>
+        <div class="item-background">
+          <div class="item-image">
+          <%= image_tag( pin.image, :width => 200) if pin.image.present? rescue "none" %>
+          </div>
+          <div class="item-info">
+            <h3><%= link_to pin.name, pin_path(pin.id) %></h3>
+            <h4>By: <%= link_to pin.user.first_name, user_path(pin.user.id) %></h4>
+          </div>
+        </div>
+      <% end %>
+  </div>
+  <br>
+  <div class= "item-links">
+    <%= link_to 'Edit', edit_board_path(board.id) %> |
+    <%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' } %> |
+  </div>
+</div>
+<% end %>
+</div>
+<center>
+<div class= "item-links">
+  <%= link_to 'New Board', new_board_path %>
+</div>
+</center>
