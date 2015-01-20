@@ -1,14 +1,22 @@
 <table>
-	<% @results.each do |film| %>
+	<tbody>
 		<tr>
-			<td><%= film["title"]  %>		</td>
-			<td><%= film["episode_id"]  %>	</td>
-			<td><%= film["director"]  %>	</td>
-			<td><%= film["producer"]  %>	</td>
+			<th class="swapi-header">title</th>
+			<th class="swapi-header">episode</th>
+			<th class="swapi-header">director</th>
+			<th class="swapi-header">producer</th>
 		</tr>
-		<tr>
-			<td><%= film["opening_crawl"] %></td>
-	 	</tr>
+		<% @results.each do |film| %>
+			<tr>
+				<td class="swapi-output"><%= film["title"]  %>		</td>
+				<td class="swapi-output"><%= film["episode_id"]  %>	</td>
+				<td class="swapi-output"><%= film["director"]  %>	</td>
+				<td class="swapi-output"><%= film["producer"]  %>	</td>
+			</tr>
+			<tr>
+				<td colspan=4 class="swapi-output">Opening crawl:  <%= film["opening_crawl"] %></td>
+		 	</tr>
 
-	<% end %>
+		<% end %>
+	</tbody>
 </table>

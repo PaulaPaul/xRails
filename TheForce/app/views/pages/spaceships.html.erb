@@ -1,20 +1,30 @@
 <table>
-	<% @results.each do |starship| %>
+	<tbody>
 		<tr>
-			<td><%= starship["name"]  %>		</td>
-			<td><%= starship["model"]  %>	</td>
-			<td><%= starship["cost_in_credits"]  %>	</td>
-			<td><%= starship["length"]  %>	</td>
-			<td><%= starship["max_atmosphering_speed"]  %>	</td>
-			<td><%= starship["crew"]  %>	</td>
-			<td><%= starship["passengers"]  %>	</td>
-			<td><%= starship["cargo_capacity"]  %>	</td>
-			<td><%= starship["consumables"]  %>	</td>
-			<td><%= starship["hyperdrive_rating"]  %>	</td>
-			<td><%= starship["MGLT"]  %>	</td>
-			<td><%= starship["starship_class"]  %>	</td>
-
+			<th class="swapi-header">name</th>
+			<th class="swapi-header">model</th>
+			<th class="swapi-header">cost (credits)</th>
+			<th class="swapi-header">length</th>
+			<th class="swapi-header">max speed</th>
+			<th class="swapi-header">crew</th>
+			<th class="swapi-header">passengers</th>
+			<th class="swapi-header">cargo</th>
+			<th class="swapi-header">hyperdrive</th>
+			<th class="swapi-header">starship class</th>
 		</tr>
-
-	<% end %>
+		<% @results.each do |starship| %>
+			<tr>
+				<td class="swapi-output"><%= starship["name"]  %>		</td>
+				<td class="swapi-output"><%= starship["model"]  %>	</td>
+				<td class="swapi-output"><%= starship["cost_in_credits"]  %>	</td>
+				<td class="swapi-output"><%= starship["length"]  %>	</td>
+				<td class="swapi-output"><%= starship["max_atmosphering_speed"]  %>	</td>
+				<td class="swapi-output"><%= starship["crew"]  %>	</td>
+				<td class="swapi-output"><%= starship["passengers"]  %>	</td>
+				<td class="swapi-output"><%= starship["cargo_capacity"]  %>	</td>
+				<td class="swapi-output"><%= starship["hyperdrive_rating"]  %>	</td>
+				<td class="swapi-output"><%= starship["starship_class"]  %>	</td>
+			</tr>
+		<% end %>
+	</tbody>
 </table>

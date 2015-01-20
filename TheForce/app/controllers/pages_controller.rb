@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  require 'open-uri'
+  require 'json'
 
   def home
   end

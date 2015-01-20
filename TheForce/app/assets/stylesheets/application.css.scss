@@ -27,16 +27,30 @@
 }
 
 
-.icon-bar .item:hover{
+.icon-bar .item:hover {
 	background:#00FF00;
 }
 
-label:hover{
+label:hover {
 	color: #FF0000;
 }
 
-table, td, th {
-    border: 1px solid #00FF00;
-    background-color: #000000;
-    color: #FFFFFF;
+row {
+	background-color: black;
 }
+
+table, tbody, tr, th, td {
+    border: 1px solid #00FF00;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swapi-header {
+	color: red;
+}
+
+.swapi-output {
+	color: white;
+}
+
