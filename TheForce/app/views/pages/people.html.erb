@@ -1,0 +1,16 @@
+<div class="CSSTableGenerator" >
+<table>
+	<tbody>
+	<% @results.each do |person| %>
+		<tr>
+			<td><%= person["name"]  %>		</td>
+			<td><%= person["height"]  %>	</td>
+			<td><%= person["mass"]  %>	</td>
+			<td><%= person["haircolor"]  %>	</td>
+			<td><%= person["gender"]  %>	</td>
+		</tr>
+
+	<% end %>
+</tbody>
+</table>
+</div>

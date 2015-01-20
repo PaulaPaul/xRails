@@ -1,0 +1,19 @@
+<table>
+	<% @results.each do |person| %>
+		<tr>
+			<td><%= person["name"]  %>		</td>
+			<td><%= person["classification"]  %>	</td>
+			<td><%= person["designation"]  %>	</td>
+			<td><%= person["average_height"]  %>	</td>
+			<td><%= person["skin_colors"]  %>	</td>
+			<td><%= person["hair_colors"]  %>	</td>
+			<td><%= person["eye_colors"]  %>	</td>
+			<td><%= person["average_lifespan"]  %>	</td>
+			<td><%= person["homeworld"]  %>	</td>
+			<td>< JSON.parse(open(person["homeworld"]).read) >	</td>
+			<td><%= person["language"]  %>	</td>
+		</tr>
+
+	<% end %>
+</table>
+

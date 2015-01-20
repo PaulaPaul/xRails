@@ -1,0 +1,14 @@
+<table>
+	<% @results.each do |film| %>
+		<tr>
+			<td><%= film["title"]  %>		</td>
+			<td><%= film["episode_id"]  %>	</td>
+			<td><%= film["director"]  %>	</td>
+			<td><%= film["producer"]  %>	</td>
+		</tr>
+		<tr>
+			<td><%= film["opening_crawl"] %></td>
+	 	</tr>
+
+	<% end %>
+</table>
