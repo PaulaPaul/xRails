@@ -13,29 +13,29 @@
 
 ActiveRecord::Schema.define(version: 20141208151817) do
 
-  create_table "boards", force: true do |t|
-    t.string   "name"
+  create_table "boards", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.text     "about"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "pins", force: true do |t|
-    t.string   "name"
-    t.string   "image"
+  create_table "pins", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "image",      limit: 255
     t.integer  "user_id"
     t.integer  "board_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "first_name"
-    t.string   "email"
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name", limit: 255
+    t.string   "email",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "last_name"
+    t.string   "last_name",  limit: 255
   end
 
 end

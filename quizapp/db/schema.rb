@@ -13,14 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20141123235119) do
 
-  create_table "cities", force: true do |t|
-    t.string   "name"
+  create_table "cities", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "states", force: true do |t|
-    t.string   "name"
+  create_table "states", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

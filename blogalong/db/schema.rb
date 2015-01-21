@@ -13,15 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20141210153531) do
 
-  create_table "blogs", force: true do |t|
-    t.string   "title"
+  create_table "blogs", force: :cascade do |t|
+    t.string   "title",      limit: 255
     t.text     "blog_text"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
   end
 
-  create_table "comments", force: true do |t|
+  create_table "comments", force: :cascade do |t|
     t.text     "comment_text"
     t.integer  "blog_id"
     t.datetime "created_at"
@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20141210153531) do
     t.integer  "user_id"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "username"
-    t.string   "email"
+  create_table "users", force: :cascade do |t|
+    t.string   "username",   limit: 255
+    t.string   "email",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -13,9 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141218131655) do
 
-  create_table "students", force: true do |t|
-    t.string   "name"
-    t.string   "email"
+  create_table "students", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "email",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -13,15 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20141216151205) do
 
-  create_table "destinations", force: true do |t|
-    t.string   "city"
-    t.string   "country"
+  create_table "destinations", force: :cascade do |t|
+    t.string   "city",        limit: 255
+    t.string   "country",     limit: 255
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "address"
+    t.string   "address",     limit: 255
   end
 
 end

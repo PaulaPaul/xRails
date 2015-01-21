@@ -13,33 +13,33 @@
 
 ActiveRecord::Schema.define(version: 20141118231232) do
 
-  create_table "owners", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+  create_table "owners", force: :cascade do |t|
+    t.string   "first_name", limit: 255
+    t.string   "last_name",  limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "petclub_memberships", force: true do |t|
-    t.string   "primary_contact"
-    t.string   "pet_name"
+  create_table "petclub_memberships", force: :cascade do |t|
+    t.string   "primary_contact", limit: 255
+    t.string   "pet_name",        limit: 255
     t.integer  "petclub_id"
     t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "petclubs", force: true do |t|
-    t.string   "name"
-    t.string   "description"
+  create_table "petclubs", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.string   "description", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "pets", force: true do |t|
-    t.string   "name"
-    t.string   "animal_type"
-    t.string   "breed"
+  create_table "pets", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.string   "animal_type", limit: 255
+    t.string   "breed",       limit: 255
     t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
